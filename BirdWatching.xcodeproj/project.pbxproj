@@ -23,6 +23,7 @@
 		F7165B86195BA81E0029BA38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7165B84195BA81E0029BA38 /* InfoPlist.strings */; };
 		F7165B88195BA81E0029BA38 /* BirdWatchingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7165B87195BA81E0029BA38 /* BirdWatchingTests.m */; };
 		F7165B93195BA8EF0029BA38 /* BirdSighting.m in Sources */ = {isa = PBXBuildFile; fileRef = F7165B92195BA8EF0029BA38 /* BirdSighting.m */; };
+		F724874F196A96420004C0B2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F724874E196A96420004C0B2 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		F74E7FD11961052A0069240F /* BirdSightingDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = F74E7FD01961052A0069240F /* BirdSightingDataController.m */; };
 		F778F035196161CC0030E327 /* AddSightingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F778F034196161CC0030E327 /* AddSightingViewController.m */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		F7165B87195BA81E0029BA38 /* BirdWatchingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BirdWatchingTests.m; sourceTree = "<group>"; };
 		F7165B91195BA8EF0029BA38 /* BirdSighting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BirdSighting.h; sourceTree = "<group>"; };
 		F7165B92195BA8EF0029BA38 /* BirdSighting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BirdSighting.m; sourceTree = "<group>"; };
+		F724874E196A96420004C0B2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F74E7FCF1961052A0069240F /* BirdSightingDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BirdSightingDataController.h; sourceTree = "<group>"; };
 		F74E7FD01961052A0069240F /* BirdSightingDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BirdSightingDataController.m; sourceTree = "<group>"; };
 		F778F033196161CC0030E327 /* AddSightingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSightingViewController.h; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F724874F196A96420004C0B2 /* CoreLocation.framework in Frameworks */,
 				F7165B5C195BA81D0029BA38 /* CoreGraphics.framework in Frameworks */,
 				F7165B5E195BA81D0029BA38 /* UIKit.framework in Frameworks */,
 				F7165B5A195BA81D0029BA38 /* Foundation.framework in Frameworks */,
@@ -113,6 +116,7 @@
 		F7165B58195BA81D0029BA38 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F724874E196A96420004C0B2 /* CoreLocation.framework */,
 				F7165B59195BA81D0029BA38 /* Foundation.framework */,
 				F7165B5B195BA81D0029BA38 /* CoreGraphics.framework */,
 				F7165B5D195BA81D0029BA38 /* UIKit.framework */,

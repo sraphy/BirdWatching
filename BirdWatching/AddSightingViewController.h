@@ -7,17 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 @class BirdSighting;
-
 
 @interface AddSightingViewController : UITableViewController <UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource>{
     NSArray *pickerArray;
 }
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (assign, nonatomic) CLLocation *currentLocation;
+
 @property (weak, nonatomic) IBOutlet UIPickerView *birdNamePicker;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+
 @property (weak, nonatomic) IBOutlet UITextField *birdNameInput;
 @property (weak, nonatomic) IBOutlet UITextField *locationInput;
 @property (weak, nonatomic) IBOutlet UITextField *dateInput;
+
 @property (strong,nonatomic) BirdSighting *birdSighting;
 
 -(IBAction)dateChanged:(id)sender;

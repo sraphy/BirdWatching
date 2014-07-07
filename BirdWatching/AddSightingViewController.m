@@ -8,7 +8,6 @@
 
 #import "AddSightingViewController.h"
 #import "BirdSighting.h"
-
 @interface AddSightingViewController ()
 
 @end
@@ -38,6 +37,12 @@
     
     self.dateInput.inputView = self.datePicker;
     self.dateInput.delegate = self;
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.locationManager.delegate self];
+    self.currentLocation = nil;
+    [self.locationManager startUpdatingLocation];
     
     
 //    self.datePicker.frame = CGRectMake(0, 480, 320, 216);
@@ -94,10 +99,15 @@
         self.birdNameInput.text = [pickerArray objectAtIndex:row];
         [self.birdNameInput reloadInputViews];
     }
-//    else if (textField == self.dateInput){
-//        self.dateInput.text = (NSString *)[self.datePicker date];
-//        [self.dateInput reloadInputViews];
-//    }
+    else if (textField == self.dateInput){
+        static NSDateFormatter *dateFormatter = nil;
+        if (dateFormatter == nil) {
+            dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+        }
+        self.dateInput.text = (NSString *)[dateFormatter stringFromDate:[NSDate date]];
+        [self.dateInput reloadInputViews];
+    }
     
 }
 
@@ -132,7 +142,12 @@
     }
 }
 
-
+#pragma mark CLLocationManagerDelegate
+-(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
+    self.locationInput.text = [[NSString alloc] initWithString:newLocation.description];
+    NSLog([[NSString alloc] initWithString:newLocation.description]);
+    self.locationManager.delegate = nil;
+}
 
 #pragma mark - Table view data source
 
@@ -186,9 +201,15 @@
     if ([[segue identifier] isEqualToString:@"ReturnInput"]) {
         if ([self.birdNameInput.text length] || [self.locationInput.text length]) {
             BirdSighting *sighting;
-            NSDate *today = [NSDate date];
             
-            sighting = [[BirdSighting alloc] initWithName:self.birdNameInput.text location:self.locationInput.text date:today];
+            static NSDateFormatter *dateFormatter = nil;
+            if (dateFormatter == nil) {
+                dateFormatter = [[NSDateFormatter alloc] init];
+                [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+            }
+            
+            sighting = [[BirdSighting alloc] initWithName:self.birdNameInput.text location:self.locationInput.text date:[dateFormatter dateFromString:self.dateInput.text]];
+            
             self.birdSighting = sighting;
         }
     }
