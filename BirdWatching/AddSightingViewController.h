@@ -10,11 +10,11 @@
 #import <CoreLocation/CoreLocation.h>
 @class BirdSighting;
 
-@interface AddSightingViewController : UITableViewController <UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource>{
+@interface AddSightingViewController : UITableViewController <UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,CLLocationManagerDelegate>{
     NSArray *pickerArray;
 }
-@property (strong, nonatomic) CLLocationManager *locationManager;
-@property (assign, nonatomic) CLLocation *currentLocation;
+@property (nonatomic) CLLocationManager *locationManager;
+@property (nonatomic) CLLocation *currentLocation;
 
 @property (weak, nonatomic) IBOutlet UIPickerView *birdNamePicker;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;

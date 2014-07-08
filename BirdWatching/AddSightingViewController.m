@@ -40,7 +40,7 @@
     
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [self.locationManager.delegate self];
+    self.locationManager.delegate = self;
     self.currentLocation = nil;
     [self.locationManager startUpdatingLocation];
     
@@ -145,7 +145,6 @@
 #pragma mark CLLocationManagerDelegate
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
     self.locationInput.text = [[NSString alloc] initWithString:newLocation.description];
-    NSLog([[NSString alloc] initWithString:newLocation.description]);
     self.locationManager.delegate = nil;
 }
 
