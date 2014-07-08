@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[BirdsAppDelegate application:didFinishLaunchingWithOptions:]:BirdsAppDelegate.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[BirdSightingDataController initializeDefaultDataList]:BirdSightingDataController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[BirdsMasterViewController tableView:commitEditingStyle:forRowAtIndexPath:]:BirdsMasterViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[BirdsMasterViewController tableView:moveRowAtIndexPath:toIndexPath:]:BirdsMasterViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[BirdSighting initWithCoder:]:BirdSighting.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[BirdSightingDataController saveBirdSightingList]:BirdSightingDataController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
